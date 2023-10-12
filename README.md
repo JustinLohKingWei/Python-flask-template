@@ -1,6 +1,6 @@
 # python-flask-template
 
-# To run :
+# To run
 
 1.`py -3 -m venv .venv`  
 2.`.venv\Scripts\activate` 
