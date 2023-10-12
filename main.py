@@ -21,6 +21,7 @@ def create_app():
 
          except requests.RequestException as e:
             print(f"HTTP Request Error: {str(e)}")
+            return str(e)
         
     return app
 
