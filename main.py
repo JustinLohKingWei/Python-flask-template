@@ -1,10 +1,27 @@
 from flask import Flask
+import requests
 
 def create_app():
     app = Flask(__name__)
     @app.route("/")
-    def hello_world():
-        return "<p>Taco Tuesday</p>"
+    def server():
+         url = "https://loripsum.net/api"
+         try:
+        # Send GET request
+            response = requests.get(url)
+
+        # Check if the request was successful (status code 200)
+            if response.status_code == 200:
+                print("HTTP Request Successful")
+                print("Response Content:")
+                print(response.text)
+                return response.text
+            else:
+                print(f"HTTP Request Failed with Status Code: {response.status_code}")
+
+         except requests.RequestException as e:
+            print(f"HTTP Request Error: {str(e)}")
+        
     return app
 
 if __name__ == "__main__":
