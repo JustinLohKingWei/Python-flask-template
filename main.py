@@ -18,6 +18,7 @@ def create_app():
                 return response.text
             else:
                 print(f"HTTP Request Failed with Status Code: {response.status_code}")
+                return response.text
 
          except requests.RequestException as e:
             print(f"HTTP Request Error: {str(e)}")
