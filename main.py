@@ -4,7 +4,7 @@ import requests
 def create_app():
     app = Flask(__name__)
     @app.route("/")
-    def server():
+    def root():
          url = "https://loripsum.net/api"
          try:
         # Send GET request
